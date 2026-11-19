@@ -1,0 +1,92 @@
+# OS가 생성한 파일
+.DS_Store
+Thumbs.db
+
+# 편집기와 IDE 설정, 임시 파일, 캐시
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+~$*
+*.tmp
+*.bak
+*.bkp
+.cache/
+
+# Claude Code 설정과 개인 지침
+.claude/
+CLAUDE.md
+
+# 개인 작업 파일
+/TODO.md
+run.sh
+my-*
+/arc/
+/archive/
+/administrative/
+
+# 외부로 보낸 파일
+/sent/
+
+# 외부 코드와 참고 자료 사본
+/external/
+/reference/
+
+# API 키 같은 비밀 정보
+.env*
+secrets/
+
+# 빌드 출력 디렉토리
+build/
+dist/
+target/
+coverage/
+
+# 로그
+*.log
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Rust
+**/*.rs.bk
+
+# C 빌드가 생성한 파일
+*.o
+*.obj
+*.a
+*.so
+*.so.*
+*.dylib
+*.d
+cmake-build-*/
+CMakeCache.txt
+CMakeFiles/
+
+# LaTeX 빌드가 생성한 파일
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.nav
+*.out
+*.snm
+*.synctex.gz
+*.toc
+*.xdv
+main.pdf
+slides.pdf
+script.pdf
+
+# Node.js 패키지와 Slidev, Vite가 생성한 파일
+node_modules/
+.slidev/
+.remote-assets/
+components.d.ts
+*.local
+*.tsbuildinfo
+.vercel/
