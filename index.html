@@ -4,14 +4,42 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Dong Hyeon Kim</title>
+<meta name="description" content="Dong Hyeon Kim (김동현), M.S. student in post-quantum cryptography at Kookmin University. Code-based cryptography, PQC implementation, provable security.">
 <style>
-  :root { color-scheme: light dark; }
-  body { max-width: 42rem; margin: 3rem auto; padding: 0 1rem; font: 16px/1.6 system-ui, sans-serif; }
-  h2 { margin-top: 2.5rem; border-bottom: 1px solid #8884; }
-  li { margin: .4rem 0; }
-  header { display: flex; gap: 1.5rem; align-items: center; }
-  header h1, header p { margin: 0 0 .5rem; }
-  .photo { width: 120px; height: 150px; flex: none; border-radius: 6px; background: #8882; object-fit: cover; }
+  :root { --bg: #fafafa; --fg: #09090b; --muted: #52525b; --border: #e4e4e7; --chip: #f4f4f5; --accent: #2563eb; --on-accent: #fff; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #0b0b0d; --fg: #f4f4f5; --muted: #a1a1aa; --border: #27272a; --chip: #18181b; --accent: #60a5fa; --on-accent: #0b0b0d; }
+  }
+  body { max-width: 46rem; margin: 0 auto; padding: 3rem 1rem; background: var(--bg); color: var(--fg); font: 16px/1.6 system-ui, sans-serif; }
+  a { color: var(--accent); }
+  h2 { margin: 3rem 0 1rem; padding-bottom: .25rem; border-bottom: 1px solid var(--border); font-size: 1.25rem; }
+  h3 { margin: 1.5rem 0 .5rem; font-size: 1rem; color: var(--muted); }
+  ul { list-style: none; padding: 0; }
+  li { margin: .75rem 0; }
+  .muted { color: var(--muted); font-size: .9rem; }
+
+  header { display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: center; }
+  header > div:last-child { flex: 1 1 16rem; }
+  header h1 { margin: 0; font-size: 1.75rem; line-height: 1.3; }
+  header p { margin: .25rem 0; }
+  .photo { width: 120px; height: 150px; flex: none; border-radius: 6px; background: var(--border); object-fit: cover; }
+  .tags { display: flex; flex-wrap: wrap; gap: .5rem; margin: .75rem 0 1rem; }
+  .tags span { padding: .1rem .6rem; border: 1px solid var(--border); border-radius: 999px; background: var(--chip); font-size: .85rem; }
+  .btn { display: inline-block; margin: 0 .5rem .5rem 0; padding: .6rem 1rem; border: 1px solid var(--accent); border-radius: 6px; text-decoration: none; }
+  .btn.primary { background: var(--accent); color: var(--on-accent); }
+
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(7.5rem, 1fr)); gap: .75rem; margin-top: 2rem; }
+  .stats a { padding: .75rem 1rem; border: 1px solid var(--border); border-radius: 6px; color: var(--fg); text-decoration: none; }
+  .stats a:hover { border-color: var(--accent); }
+  .stats b { display: block; font-size: 1.75rem; line-height: 1.2; }
+  .stats span { color: var(--muted); font-size: .85rem; }
+
+  .tl li { display: grid; grid-template-columns: 8rem 1fr; gap: 1rem; }
+  @media (max-width: 30rem) { .tl li { grid-template-columns: 1fr; gap: 0; } }
+
+  .pub .t { font-weight: 600; }
+  .pub .muted { display: block; }
+  .badge { margin-left: .4rem; padding: 0 .4rem; border-radius: 4px; background: var(--accent); color: var(--on-accent); font-size: .75rem; font-weight: 600; white-space: nowrap; }
 </style>
 </head>
 <body>
@@ -19,9 +47,27 @@
   <div class="photo"></div>
   <div>
     <h1>Dong Hyeon Kim (김동현)</h1>
-    <p>M.S. Student, <a href="https://sites.google.com/kookmin.ac.kr/fdl/home">Future cryptography Design Laboratory (FDL)</a>, Kookmin University</p>
+    <p>Post-Quantum Cryptography Researcher</p>
+    <p class="muted">M.S. Student, <a href="https://sites.google.com/kookmin.ac.kr/fdl/home">Future cryptography Design Laboratory (FDL)</a>, Kookmin University</p>
+    <div class="tags">
+      <span>Code-based Cryptography</span>
+      <span>PQC Implementation</span>
+      <span>Provable Security</span>
+      <span>PQC Migration</span>
+      <span>Rust · WebAssembly</span>
+    </div>
+    <a class="btn primary" href="mailto:wlswudpdlf31@kookmin.ac.kr">wlswudpdlf31@kookmin.ac.kr</a>
+    <a class="btn" href="https://github.com/DongHyeon0729">GitHub</a>
   </div>
 </header>
+
+<nav class="stats">
+  <a href="#publications"><b>18</b><span>Publications</span></a>
+  <a href="#international"><b>5</b><span>International</span></a>
+  <a href="#publications"><b>5</b><span>First-author</span></a>
+  <a href="#awards"><b>3</b><span>Awards</span></a>
+  <a href="#projects"><b>6</b><span>R&amp;D Projects</span></a>
+</nav>
 
 <h2>Education</h2>
 <ul>
@@ -29,61 +75,73 @@
   <li>B.S., Department of Information Security, Cryptology, and Mathematics, Kookmin University</li>
 </ul>
 
-<h2>Experience</h2>
-<ul>
-  <li>2025.03 – present · FDL, Kookmin University</li>
-  <li>2025.09 – 2026.02 · 2025 옥스포드 글로벌 사이버보안 인재양성 교육 프로그램</li>
-  <li>2023.12 – 2025.02 · FDL KIDS, Kookmin University</li>
-  <li>2024 · 국민대학교 하계방학 학부생 인턴십 (6주)</li>
+<h2 id="awards">Awards</h2>
+<ul class="tl">
+  <li><span class="muted">2026.10</span><span>학회우수논문상, 한국정보보호학회 동계학술대회</span></li>
+  <li><span class="muted">2025.10</span><span>2025년도 국가암호공모전 KpqC 분야 장려상</span></li>
+  <li><span class="muted">2024</span><span>한국정보보호학회 주관 2024년도 암호분석경진대회 최우수상</span></li>
 </ul>
 
-<h2>Publications</h2>
-<h3>International Conferences</h3>
-<ul>
-  <li>Kim Yae Chan, <b>Kim Dong Hyeon</b>, Kim Ye Jin, Choi A Yeong and Kim Dong Chan, "Performance Comparison of a Rust WebAssembly Implementation against C in Device-to-Device ML-KEM Key Exchange," MobiSec 2026 Poster, 2026.12.</li>
-  <li>Kim Dong-Chan, Park Donghyun, Kim Minji, <b>Kim Dong Hyeon</b> and Kim Ye Jin, "IND-CCA2 Security of PALOMA without Re-encryption via Rigidity of the Extended Patterson Decoder," ICISC 2026, 2026.11.</li>
-  <li><b>Dong Hyeon Kim</b>, Ye Jin Kim and Dong Chan Kim, "Evaluating the Syzygy Distinguisher Cost for PALOMA and Its Comparison with Classic McEliece," WISA 2026, 2026.08.</li>
-  <li>Ye Jin Kim, <b>Dong Hyeon Kim</b>, Yae Chan Kim, Seung-Min Ahn, A Yeong Choi and Dong Chan Kim, "A Study on the Cryptography Bill of Materials (CBOM) for Post-Quantum Migration," WISA 2026 Poster, 2026.08.</li>
-  <li>Kim Ye Jin, <b>Kim Dong Hyeon</b>, Kim Dong Chan, "Applying ML-DSA's NTT to SMAUG-T Polynomial Multiplication: Feasibility Analysis and Performance Comparison," ICUFN 2026, 2026.07.</li>
+<h2>Experience</h2>
+<ul class="tl">
+  <li><span class="muted">2025.03 – present</span><span>FDL, Kookmin University</span></li>
+  <li><span class="muted">2025.09 – 2026.02</span><span>2025 옥스포드 글로벌 사이버보안 인재양성 교육 프로그램</span></li>
+  <li><span class="muted">2023.12 – 2025.02</span><span>FDL KIDS, Kookmin University</span></li>
+  <li><span class="muted">2024</span><span>국민대학교 하계방학 학부생 인턴십 (6주)</span></li>
+</ul>
+
+<h2 id="projects">R&amp;D Projects</h2>
+<ul class="tl">
+  <li><span class="muted">2025</span><span>오류정정부호 기반 최신 양자내성암호 안전성 및 효율성 연구<br><span class="muted">ETRI부설 국가보안기술연구소</span></span></li>
+  <li><span class="muted">2025</span><span>양자내성암호 통합 라이브러리 개발<br><span class="muted">Y社</span></span></li>
+  <li><span class="muted">2024 – 2025</span><span>KCMVP 보안수준 3 암호모듈 제작을 위한 핵심기술 개발<br><span class="muted">IITP</span></span></li>
+  <li><span class="muted">2024</span><span>양자내성암호 구현 기술 개발<br><span class="muted">I社</span></span></li>
+  <li><span class="muted">2024</span><span>국가공공 정보시스템 안전성 및 활용성 제고를 위한 차세대 암호체계 개발<br><span class="muted">IITP</span></span></li>
+  <li><span class="muted">2023</span><span>부호기반 암호의 안전성 및 효율성에 관한 연구<br><span class="muted">NRF</span></span></li>
+</ul>
+
+<h2 id="publications">Publications</h2>
+<h3 id="international">International Conferences</h3>
+<ul class="pub">
+  <li><span class="t">Performance Comparison of a Rust WebAssembly Implementation against C in Device-to-Device ML-KEM Key Exchange</span>
+    <span class="muted">Kim Yae Chan, <b>Kim Dong Hyeon</b>, Kim Ye Jin, Choi A Yeong and Kim Dong Chan · MobiSec 2026 Poster, 2026.12</span></li>
+  <li><span class="t">IND-CCA2 Security of PALOMA without Re-encryption via Rigidity of the Extended Patterson Decoder</span>
+    <span class="muted">Kim Dong-Chan, Park Donghyun, Kim Minji, <b>Kim Dong Hyeon</b> and Kim Ye Jin · ICISC 2026, 2026.11</span></li>
+  <li><span class="t">Evaluating the Syzygy Distinguisher Cost for PALOMA and Its Comparison with Classic McEliece</span><span class="badge">1st author</span>
+    <span class="muted"><b>Dong Hyeon Kim</b>, Ye Jin Kim and Dong Chan Kim · WISA 2026, 2026.08</span></li>
+  <li><span class="t">A Study on the Cryptography Bill of Materials (CBOM) for Post-Quantum Migration</span>
+    <span class="muted">Ye Jin Kim, <b>Dong Hyeon Kim</b>, Yae Chan Kim, Seung-Min Ahn, A Yeong Choi and Dong Chan Kim · WISA 2026 Poster, 2026.08</span></li>
+  <li><span class="t">Applying ML-DSA's NTT to SMAUG-T Polynomial Multiplication: Feasibility Analysis and Performance Comparison</span>
+    <span class="muted">Kim Ye Jin, <b>Kim Dong Hyeon</b>, Kim Dong Chan · ICUFN 2026, 2026.07</span></li>
 </ul>
 <h3>Domestic Conferences</h3>
-<ul>
-  <li>김예찬, 최아영, 김예진, <b>김동현</b>, 김동찬, "양자내성암호에 대한 liboqs기반 WebAssembly와 Web Crypto API 구현 성능 비교," 한국통신학회 추계학술대회, 2026.11.</li>
-  <li>김예찬, 최아영, 김예진, <b>김동현</b>, 김동찬, "양자내성암호 전환을 위한 암호 자산 식별 도구 cdxgen의 한계 분석," 한국정보보호학회 동계학술대회, 2026.10. (학회우수논문상)</li>
-  <li>김예진, <b>김동현</b>, 김동찬, "NIST SP 800-227에서 명시한 키 캡슐화 메커니즘의 구현 지침과 운용 요구사항," 한국정보보호학회 하계학술대회, 2026.05.</li>
-  <li><b>김동현</b>, 안승민, 김예진, 권다은, 김예찬, 김동찬, "C-to-Rust 변환 시 발생하는 원시 포인터 문제와 해결 방안 연구 동향," 한국정보보호학회 하계학술대회, 2026.05.</li>
-  <li>안승민, <b>김동현</b>, 김예진, 권다은, 김동찬, "주요 C-to-Rust 자동 변환 도구 특성 분석," 한국정보보호학회 하계학술대회, 2026.05.</li>
-  <li>김예찬, <b>김동현</b>, 김예진, 권다은, 안승민, 김동찬, "P2P 기반 서비스 개발 및 운영 시 고려해야 하는 국내 법령과 컴플라이언스 가이드라인에 대한 연구," 한국정보보호학회 하계학술대회, 2026.05.</li>
-  <li>김예진, <b>김동현</b>, 김동찬, "블록암호 AES 화이트박스 구현에 대한 BGE 기반 키 복구 공격의 단계별 연산량 분석," JCCI 2026, 2026.04.</li>
-  <li><b>김동현</b>, 김동찬, "RSA-OAEP 안전성 증명 이력에 관한 연구," 한국정보보호학회 하계학술대회, 2025.06.</li>
-  <li><b>김동현</b>, 김민지, 박동현, 이제원, 김동찬, "CHAMELEON: 화상회의용 워터마크 기술," 동계 통신학회 종합학술발표회, 2025.02.</li>
-  <li>이제원, <b>김동현</b>, 김민지, 박동현, 김동찬, "부호 기반 키 체결 PALOMA의 성능 측정에 관한 연구," 한국정보보호학회 동계학술대회, 2024.11.</li>
-  <li>박동현, 김민지, 이제원, <b>김동현</b>, 김동찬, "Gao-Mateer Additive FFT의 반복문 방식 구현에 관한 연구," 한국정보보호학회 동계학술대회, 2024.11.</li>
-  <li><b>김동현</b>, 박동현, 김민지, 이제원, 김동찬, "ECB 모드 암호의 일방향성 안전성과 구별 불가능성 안전성에 관한 연구," 한국정보보호학회 하계학술대회, 2024.06.</li>
-  <li>박동현, 김민지, <b>김동현</b>, 김동찬, "이진 분해가능 Goppa 부호의 확장 Patterson 디코딩에 관한 연구," 동계 통신학회 종합학술발표회, 2024.02.</li>
-</ul>
-
-<h2>Projects</h2>
-<ul>
-  <li>2025 · 오류정정부호 기반 최신 양자내성암호 안전성 및 효율성 연구, ETRI부설 국가보안기술연구소</li>
-  <li>2025 · 양자내성암호 통합 라이브러리 개발, Y社</li>
-  <li>2024 – 2025 · KCMVP 보안수준 3 암호모듈 제작을 위한 핵심기술 개발, IITP</li>
-  <li>2024 · 양자내성암호 구현 기술 개발, I社</li>
-  <li>2024 · 국가공공 정보시스템 안전성 및 활용성 제고를 위한 차세대 암호체계 개발, IITP</li>
-  <li>2023 · 부호기반 암호의 안전성 및 효율성에 관한 연구, NRF</li>
-</ul>
-
-<h2>Awards</h2>
-<ul>
-  <li>2026.10 · 학회우수논문상, 한국정보보호학회 동계학술대회</li>
-  <li>2025.10 · 2025년도 국가암호공모전 KpqC 분야 장려상</li>
-  <li>2024 · 한국정보보호학회 주관 2024년도 암호분석경진대회 최우수상</li>
-</ul>
-
-<h2>Contact</h2>
-<ul>
-  <li><a href="mailto:wlswudpdlf31@kookmin.ac.kr">wlswudpdlf31@kookmin.ac.kr</a></li>
-  <li><a href="https://github.com/DongHyeon0729">GitHub</a></li>
+<ul class="pub">
+  <li><span class="t">양자내성암호에 대한 liboqs기반 WebAssembly와 Web Crypto API 구현 성능 비교</span>
+    <span class="muted">김예찬, 최아영, 김예진, <b>김동현</b>, 김동찬 · 한국통신학회 추계학술대회, 2026.11</span></li>
+  <li><span class="t">양자내성암호 전환을 위한 암호 자산 식별 도구 cdxgen의 한계 분석</span><span class="badge">우수논문상</span>
+    <span class="muted">김예찬, 최아영, 김예진, <b>김동현</b>, 김동찬 · 한국정보보호학회 동계학술대회, 2026.10</span></li>
+  <li><span class="t">NIST SP 800-227에서 명시한 키 캡슐화 메커니즘의 구현 지침과 운용 요구사항</span>
+    <span class="muted">김예진, <b>김동현</b>, 김동찬 · 한국정보보호학회 하계학술대회, 2026.05</span></li>
+  <li><span class="t">C-to-Rust 변환 시 발생하는 원시 포인터 문제와 해결 방안 연구 동향</span><span class="badge">1st author</span>
+    <span class="muted"><b>김동현</b>, 안승민, 김예진, 권다은, 김예찬, 김동찬 · 한국정보보호학회 하계학술대회, 2026.05</span></li>
+  <li><span class="t">주요 C-to-Rust 자동 변환 도구 특성 분석</span>
+    <span class="muted">안승민, <b>김동현</b>, 김예진, 권다은, 김동찬 · 한국정보보호학회 하계학술대회, 2026.05</span></li>
+  <li><span class="t">P2P 기반 서비스 개발 및 운영 시 고려해야 하는 국내 법령과 컴플라이언스 가이드라인에 대한 연구</span>
+    <span class="muted">김예찬, <b>김동현</b>, 김예진, 권다은, 안승민, 김동찬 · 한국정보보호학회 하계학술대회, 2026.05</span></li>
+  <li><span class="t">블록암호 AES 화이트박스 구현에 대한 BGE 기반 키 복구 공격의 단계별 연산량 분석</span>
+    <span class="muted">김예진, <b>김동현</b>, 김동찬 · JCCI 2026, 2026.04</span></li>
+  <li><span class="t">RSA-OAEP 안전성 증명 이력에 관한 연구</span><span class="badge">1st author</span>
+    <span class="muted"><b>김동현</b>, 김동찬 · 한국정보보호학회 하계학술대회, 2025.06</span></li>
+  <li><span class="t">CHAMELEON: 화상회의용 워터마크 기술</span><span class="badge">1st author</span>
+    <span class="muted"><b>김동현</b>, 김민지, 박동현, 이제원, 김동찬 · 동계 통신학회 종합학술발표회, 2025.02</span></li>
+  <li><span class="t">부호 기반 키 체결 PALOMA의 성능 측정에 관한 연구</span>
+    <span class="muted">이제원, <b>김동현</b>, 김민지, 박동현, 김동찬 · 한국정보보호학회 동계학술대회, 2024.11</span></li>
+  <li><span class="t">Gao-Mateer Additive FFT의 반복문 방식 구현에 관한 연구</span>
+    <span class="muted">박동현, 김민지, 이제원, <b>김동현</b>, 김동찬 · 한국정보보호학회 동계학술대회, 2024.11</span></li>
+  <li><span class="t">ECB 모드 암호의 일방향성 안전성과 구별 불가능성 안전성에 관한 연구</span><span class="badge">1st author</span>
+    <span class="muted"><b>김동현</b>, 박동현, 김민지, 이제원, 김동찬 · 한국정보보호학회 하계학술대회, 2024.06</span></li>
+  <li><span class="t">이진 분해가능 Goppa 부호의 확장 Patterson 디코딩에 관한 연구</span>
+    <span class="muted">박동현, 김민지, <b>김동현</b>, 김동찬 · 동계 통신학회 종합학술발표회, 2024.02</span></li>
 </ul>
 </body>
 </html>
