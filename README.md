@@ -14,4 +14,4 @@ career/
 
 ## 배포
 
-- main 브랜치에 push → 1~2분 뒤 https://donghyeon0729.github.io/ 에 반영
+- main 브랜치에 push → https://donghyeon0729.github.io/ 에 반영
