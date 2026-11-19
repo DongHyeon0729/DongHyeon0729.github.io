@@ -5,43 +5,60 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Dong Hyeon Kim</title>
 <meta name="description" content="Dong Hyeon Kim (김동현), M.S. student in post-quantum cryptography at Kookmin University. Code-based cryptography, PQC implementation, provable security.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600&display=swap">
 <style>
-  :root { --bg: #fafafa; --fg: #09090b; --muted: #52525b; --border: #e4e4e7; --chip: #f4f4f5; --accent: #2563eb; --on-accent: #fff; }
-  @media (prefers-color-scheme: dark) {
-    :root { --bg: #0b0b0d; --fg: #f4f4f5; --muted: #a1a1aa; --border: #27272a; --chip: #18181b; --accent: #60a5fa; --on-accent: #0b0b0d; }
+  :root {
+    --bg: #f7f4ee; --raised: #efe9df; --fg: #1f1b16; --fg2: #5e554a; --muted: #6f665a;
+    --line: rgba(31, 27, 22, .1); --accent: #1f4e8c; --on-accent: #fdfbf7;
+    --sans: "IBM Plex Sans KR", system-ui, sans-serif; --mono: "IBM Plex Mono", ui-monospace, monospace;
+    --ease: cubic-bezier(.22, 1, .36, 1);
   }
-  body { max-width: 46rem; margin: 0 auto; padding: 3rem 1rem; background: var(--bg); color: var(--fg); font: 16px/1.6 system-ui, sans-serif; word-break: keep-all; }
-  a { color: var(--accent); }
-  h2 { margin: 3rem 0 1rem; padding-bottom: .25rem; border-bottom: 1px solid var(--border); font-size: 1.25rem; }
-  h3 { margin: 1.5rem 0 .5rem; font-size: 1rem; color: var(--muted); }
-  ul { list-style: none; padding: 0; }
-  li { margin: .75rem 0; }
-  .muted { color: var(--muted); font-size: .9rem; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #161513; --raised: #262421; --fg: #efe9de; --fg2: #aaa398; --muted: #8a847a; --line: rgba(239, 233, 222, .1); --accent: #8fb3e8; --on-accent: #161513; }
+  }
+  body { max-width: 736px; margin: 0 auto; padding: 48px 16px; background: var(--bg); color: var(--fg); font: 400 16px/26px var(--sans); word-break: keep-all; }
+  @media (min-width: 640px) { body { padding: 64px 24px; } }
+  a { color: var(--accent); text-underline-offset: 3px; transition: color 150ms var(--ease); }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+  h1, h2, h3 { font-weight: 500; }
+  h2 { margin: 48px 0 16px; padding-bottom: 8px; border-bottom: 1px solid var(--line); font-size: 20px; line-height: 28px; }
+  h3 { margin: 24px 0 8px; color: var(--fg2); font-size: 14px; line-height: 20px; }
+  ul { list-style: none; margin: 0; padding: 0; }
+  li { margin: 12px 0; }
+  .muted { color: var(--fg2); font-size: 14px; line-height: 20px; }
 
-  header { display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: center; }
-  header > div:last-child { flex: 1 1 16rem; }
-  header h1 { margin: 0; font-size: 1.75rem; line-height: 1.3; }
-  header p { margin: .25rem 0; }
-  .photo { width: 120px; height: 150px; flex: none; border-radius: 6px; background: var(--border); object-fit: cover; }
-  .tags { display: flex; flex-wrap: wrap; gap: .5rem; margin: .75rem 0 1rem; }
-  .tags span { padding: .1rem .6rem; border: 1px solid var(--border); border-radius: 999px; background: var(--chip); font-size: .85rem; }
-  .btn { display: inline-block; margin: 0 .5rem .5rem 0; padding: .6rem 1rem; border: 1px solid var(--accent); border-radius: 6px; text-decoration: none; }
-  .btn.primary { background: var(--accent); color: var(--on-accent); }
+  header { display: flex; flex-wrap: wrap; gap: 24px; align-items: center; }
+  header > div:last-child { flex: 1 1 256px; }
+  header h1 { margin: 0; font-size: 32px; line-height: 36px; }
+  header .role { margin: 8px 0 4px; font-size: 18px; line-height: 28px; }
+  header .muted { margin: 0; }
+  .photo { width: 120px; height: 160px; flex: none; border-radius: 8px; background: var(--raised); object-fit: cover; }
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 20px; }
+  .tags span { padding: 2px 8px; border: 1px solid var(--line); border-radius: 4px; color: var(--fg2); font-size: 14px; line-height: 20px; }
+  .btn { display: inline-block; margin: 0 8px 8px 0; padding: 10px 16px; border: 1px solid var(--line); border-radius: 8px; color: var(--fg); font-size: 14px; line-height: 22px; text-decoration: none; transition: background-color 150ms var(--ease), opacity 150ms var(--ease); }
+  .btn:hover { background: var(--raised); }
+  .btn.primary { border-color: var(--accent); background: var(--accent); color: var(--on-accent); }
+  .btn.primary:hover { opacity: .88; }
 
-  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr)); gap: .75rem; margin-top: 2rem; }
-  .stats a { padding: .75rem; border: 1px solid var(--border); border-radius: 6px; color: var(--fg); text-decoration: none; }
-  .stats a:hover { border-color: var(--accent); }
-  .stats b { display: block; font-size: 1.75rem; line-height: 1.2; }
-  .stats span { color: var(--muted); font-size: .85rem; }
+  .figures { display: flex; flex-wrap: wrap; gap: 16px 40px; margin-top: 40px; padding: 20px 0; border-block: 1px solid var(--line); }
+  .figures a { color: var(--fg2); font-size: 14px; line-height: 20px; text-decoration: none; }
+  .figures a:hover { color: var(--accent); }
+  .figures b { display: block; color: var(--fg); font: 400 32px/40px var(--mono); font-variant-numeric: tabular-nums; }
 
-  .tl li { display: grid; grid-template-columns: 8rem 1fr; gap: 1rem; }
-  @media (max-width: 30rem) { .tl li { grid-template-columns: 1fr; gap: 0; } }
+  .tl li { display: grid; grid-template-columns: 152px 1fr; gap: 16px; }
+  .tl li > span:first-child { font-family: var(--mono); line-height: 26px; }
+  @media (max-width: 480px) { .tl li { grid-template-columns: 1fr; gap: 0; } }
 
-  .pub .t { font-weight: 600; }
-  .pub .muted { display: block; }
-  footer { margin-top: 4rem; padding-top: 1rem; border-top: 1px solid var(--border); color: var(--muted); font-size: .8rem; }
+  .pub li { margin: 16px 0; }
+  .pub .t { font-weight: 500; }
+  .pub .muted { display: block; margin-top: 4px; }
+  .pub b { color: var(--fg); font-weight: 500; text-decoration: underline 2px var(--accent); text-underline-offset: 3px; }
+  .badge { margin-left: 8px; padding: 2px 8px; border: 1px solid var(--line); border-radius: 4px; color: var(--fg2); font: 400 12px/16px var(--mono); white-space: nowrap; vertical-align: 2px; }
   .ai { color: var(--muted); }
-  .badge { margin-left: .4rem; padding: 0 .4rem; border-radius: 4px; background: var(--accent); color: var(--on-accent); font-size: .75rem; font-weight: 600; white-space: nowrap; }
+  .note { margin: 12px 0 0; color: var(--muted); font-size: 12px; line-height: 16px; }
+  footer { margin-top: 64px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; line-height: 16px; }
 </style>
 </head>
 <body>
@@ -49,32 +66,32 @@
   <div class="photo"></div>
   <div>
     <h1>Dong Hyeon Kim (김동현)</h1>
-    <p>Post-Quantum Cryptography Researcher</p>
-    <p class="muted">M.S. Student (expected graduation: Aug. 2027), <a href="https://sites.google.com/kookmin.ac.kr/fdl/home">Future cryptography Design Laboratory (FDL)</a>, Kookmin University</p>
+    <p class="role">Code-based post-quantum cryptography researcher</p>
+    <p class="muted">M.S. student (expected graduation: Aug. 2027), <a href="https://sites.google.com/kookmin.ac.kr/fdl/home">Future cryptography Design Laboratory (FDL)</a>, Kookmin University</p>
     <div class="tags">
-      <span>Code-based Cryptography</span>
-      <span>PQC Implementation</span>
-      <span>Provable Security</span>
-      <span>PQC Migration</span>
-      <span>C-to-Rust Migration</span>
+      <span>Code-based cryptography</span>
+      <span>PQC implementation</span>
+      <span>Provable security</span>
+      <span>PQC migration</span>
+      <span>C-to-Rust migration</span>
     </div>
     <a class="btn primary" href="mailto:wlswudpdlf31@kookmin.ac.kr">wlswudpdlf31@kookmin.ac.kr</a>
     <a class="btn" href="https://github.com/DongHyeon0729">GitHub</a>
   </div>
 </header>
 
-<nav class="stats">
-  <a href="#publications"><b>18</b><span>Publications</span></a>
-  <a href="#international"><b>5</b><span>International</span></a>
-  <a href="#publications"><b>5</b><span>First-author</span></a>
-  <a href="#awards"><b>3</b><span>Awards</span></a>
-  <a href="#projects"><b>6</b><span>Projects</span></a>
+<nav class="figures" aria-label="Summary">
+  <a href="#publications"><b>18</b>Publications</a>
+  <a href="#publications"><b>5</b>First author</a>
+  <a href="#international"><b>5</b>International venues</a>
+  <a href="#awards"><b>3</b>Awards</a>
+  <a href="#projects"><b>6</b>R&amp;D projects</a>
 </nav>
 
 <h2>Education</h2>
-<ul>
-  <li>M.S. Student, Department of Cyber Security, Kookmin University <span class="muted">· 2025.03 – present (expected Aug. 2027)</span></li>
-  <li>B.S., Department of Information Security, Cryptology, and Mathematics, Kookmin University</li>
+<ul class="tl">
+  <li><span class="muted">2025.03 – present</span><span>M.S. student, Department of Cyber Security, Kookmin University<br><span class="muted">Expected graduation: Aug. 2027</span></span></li>
+  <li><span class="muted"></span><span>B.S., Department of Information Security, Cryptology, and Mathematics, Kookmin University</span></li>
 </ul>
 
 <h2>Skills</h2>
@@ -85,7 +102,7 @@
   <li><span class="muted">Embedded</span><span class="ai" title="Used only with AI coding assistance">STM32 (Arm Cortex-M33)*, CMake*</span></li>
   <li><span class="muted">Web</span><span class="ai" title="Used only with AI coding assistance">React*, Vite*, Tailwind CSS*, WebAssembly*</span></li>
 </ul>
-<p class="muted">* Used only with AI coding assistance.</p>
+<p class="note">* Used only with AI coding assistance</p>
 
 <h2 id="awards">Awards</h2>
 <ul class="tl">
@@ -102,7 +119,7 @@
   <li><span class="muted">2024</span><span>국민대학교 하계방학 학부생 인턴십 (6주)</span></li>
 </ul>
 
-<h2 id="projects">R&amp;D Projects</h2>
+<h2 id="projects">R&amp;D projects</h2>
 <ul class="tl">
   <li><span class="muted">2025</span><span>오류정정부호 기반 최신 양자내성암호 안전성 및 효율성 연구<br><span class="muted">ETRI부설 국가보안기술연구소</span></span></li>
   <li><span class="muted">2025</span><span>양자내성암호 통합 라이브러리 개발<br><span class="muted">Y社</span></span></li>
@@ -113,7 +130,7 @@
 </ul>
 
 <h2 id="publications">Publications</h2>
-<h3 id="international">International Conferences</h3>
+<h3 id="international">International conferences</h3>
 <ul class="pub">
   <li><span class="t">Performance Comparison of a Rust WebAssembly Implementation against C in Device-to-Device ML-KEM Key Exchange</span>
     <span class="muted">Kim Yae Chan, <b>Kim Dong Hyeon</b>, Kim Ye Jin, Choi A Yeong and Kim Dong Chan · MobiSec 2026 Poster, 2026.12</span></li>
@@ -126,7 +143,7 @@
   <li><span class="t">Applying ML-DSA's NTT to SMAUG-T Polynomial Multiplication: Feasibility Analysis and Performance Comparison</span>
     <span class="muted">Kim Ye Jin, <b>Kim Dong Hyeon</b>, Kim Dong Chan · ICUFN 2026, 2026.07</span></li>
 </ul>
-<h3>Domestic Conferences</h3>
+<h3>Domestic conferences</h3>
 <ul class="pub">
   <li><span class="t">양자내성암호에 대한 liboqs기반 WebAssembly와 Web Crypto API 구현 성능 비교</span>
     <span class="muted">김예찬, 최아영, 김예진, <b>김동현</b>, 김동찬 · 한국통신학회 추계학술대회, 2026.11</span></li>
@@ -156,6 +173,6 @@
     <span class="muted">박동현, 김민지, <b>김동현</b>, 김동찬 · 동계 통신학회 종합학술발표회, 2024.02</span></li>
 </ul>
 
-<footer>This site is generated and maintained by AI.</footer>
+<footer>This site is generated and maintained by AI</footer>
 </body>
 </html>
