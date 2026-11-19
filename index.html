@@ -32,6 +32,7 @@
   header { display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start; }
   header > div:last-child { flex: 1 1 256px; }
   header h1 { margin: 0; font-size: 32px; line-height: 36px; }
+  header h1 .ko { display: block; margin-top: 4px; color: var(--fg2); font-size: 16px; font-weight: 400; line-height: 24px; }
   header .role { margin: 8px 0 4px; font-size: 18px; line-height: 28px; }
   header .muted { margin: 0; }
   .photo { display: block; width: 120px; height: 160px; flex: none; border-radius: 8px; background: var(--raised); object-fit: cover; }
@@ -43,16 +44,18 @@
   .links svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
 
   @media (min-width: 960px) {
-    body { max-width: 1040px; display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 64px; align-items: start; }
+    body { max-width: 1040px; display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 64px; align-items: start; }
     header { display: block; position: sticky; top: 64px; }
     .photo { width: 168px; height: 224px; margin-bottom: 24px; }
     header h1 { font-size: 28px; line-height: 32px; }
+    header .role { font-size: 16px; line-height: 24px; }
     main > .figures { margin-top: 0; }
   }
 
   .figures { display: flex; flex-wrap: wrap; gap: 16px 40px; margin-top: 40px; padding: 20px 0; border-block: 1px solid var(--line); }
   .figures a { color: var(--fg2); font-size: 14px; line-height: 20px; text-decoration: none; }
   .figures a:hover { color: var(--accent); }
+  @media (max-width: 639px) { .figures { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; } }
   .figures b { display: block; color: var(--fg); font: 400 32px/40px var(--mono); font-variant-numeric: tabular-nums; }
 
   .tl li { display: grid; grid-template-columns: 152px 1fr; gap: 16px; }
@@ -73,7 +76,7 @@
 <header>
   <div class="photo"></div>
   <div>
-    <h1>Dong Hyeon Kim (김동현)</h1>
+    <h1>Dong Hyeon Kim<span class="ko">김동현</span></h1>
     <p class="role">Post-quantum cryptography researcher</p>
     <p class="muted">M.S. student (expected graduation: Aug. 2027), <a href="https://sites.google.com/kookmin.ac.kr/fdl/home">Future cryptography Design Laboratory (FDL)</a>, Kookmin University</p>
     <div class="tags">
