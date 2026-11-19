@@ -34,13 +34,21 @@
   header h1 { margin: 0; font-size: 32px; line-height: 36px; }
   header .role { margin: 8px 0 4px; font-size: 18px; line-height: 28px; }
   header .muted { margin: 0; }
-  .photo { width: 120px; height: 160px; flex: none; border-radius: 8px; background: var(--raised); object-fit: cover; }
+  .photo { display: block; width: 120px; height: 160px; flex: none; border-radius: 8px; background: var(--raised); object-fit: cover; }
   .tags { display: flex; flex-wrap: wrap; gap: 4px; margin: 12px 0 16px; }
   .tags span { padding: 0 6px; border: 1px solid var(--line); border-radius: 4px; color: var(--fg2); font-size: 12px; line-height: 20px; }
   .links { display: flex; gap: 4px; margin-left: -6px; }
   .links a { display: inline-flex; padding: 6px; border-radius: 6px; color: var(--fg2); transition: color 150ms var(--ease), background-color 150ms var(--ease); }
   .links a:hover { color: var(--accent); background: var(--raised); }
   .links svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+
+  @media (min-width: 960px) {
+    body { max-width: 1040px; display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 64px; align-items: start; }
+    header { display: block; position: sticky; top: 64px; }
+    .photo { width: 168px; height: 224px; margin-bottom: 24px; }
+    header h1 { font-size: 28px; line-height: 32px; }
+    main > .figures { margin-top: 0; }
+  }
 
   .figures { display: flex; flex-wrap: wrap; gap: 16px 40px; margin-top: 40px; padding: 20px 0; border-block: 1px solid var(--line); }
   .figures a { color: var(--fg2); font-size: 14px; line-height: 20px; text-decoration: none; }
@@ -82,6 +90,7 @@
   </div>
 </header>
 
+<main>
 <nav class="figures" aria-label="Summary">
   <a href="#publications"><b>18</b>Publications</a>
   <a href="#publications"><b>5</b>First author</a>
@@ -176,5 +185,6 @@
 </ul>
 
 <footer>This site is generated and maintained by AI</footer>
+</main>
 </body>
 </html>
