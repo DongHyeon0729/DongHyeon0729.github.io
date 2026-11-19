@@ -9,11 +9,19 @@
   body { max-width: 42rem; margin: 3rem auto; padding: 0 1rem; font: 16px/1.6 system-ui, sans-serif; }
   h2 { margin-top: 2.5rem; border-bottom: 1px solid #8884; }
   li { margin: .4rem 0; }
+  header { display: flex; gap: 1.5rem; align-items: center; }
+  header h1, header p { margin: 0 0 .5rem; }
+  .photo { width: 120px; height: 150px; flex: none; border-radius: 6px; background: #8882; object-fit: cover; }
 </style>
 </head>
 <body>
-<h1>Dong Hyeon Kim (김동현)</h1>
-<p>M.S. Student, <a href="https://sites.google.com/kookmin.ac.kr/fdl/home">Future cryptography Design Laboratory (FDL)</a>, Kookmin University</p>
+<header>
+  <div class="photo"></div>
+  <div>
+    <h1>Dong Hyeon Kim (김동현)</h1>
+    <p>M.S. Student, <a href="https://sites.google.com/kookmin.ac.kr/fdl/home">Future cryptography Design Laboratory (FDL)</a>, Kookmin University</p>
+  </div>
+</header>
 
 <h2>Education</h2>
 <ul>
